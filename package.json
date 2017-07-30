@@ -2,7 +2,7 @@
 	"name": "current-sync",
 	"productName": "Current",
 	"version": "0.1.0",
-	"description": "A tool to manage all of your projects, built on git.",
+	"description": "A workspace synchronization tool built on git.",
 	"main": "src/app.js",
 	"scripts": {
 		"start": "electron ."
