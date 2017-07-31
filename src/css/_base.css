@@ -1,0 +1,50 @@
+:root {
+	--base-font: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	--base-font-size: 1rem;
+	--base-line-height: calc(var(--base-font-size) * 1.6);
+	
+	--base-duration: 0.15s;
+
+	--base-back-hue: 0;
+	--base-back-sat: 0%;
+	--base-back-lum: 15%;
+	--base-back-color: hsl(
+		var(--base-back-hue),
+		var(--base-back-sat),
+		var(--base-back-lum));
+	--base-fore-hue: 0;
+	--base-fore-sat: 0%;
+	--base-fore-lum: 100%;
+	--base-fore-color: hsl(
+		var(--base-fore-hue),
+		var(--base-fore-sat),
+		var(--base-fore-lum));
+
+	--accent1-hue: 190;
+	--accent1-sat: 73%;
+	--accent1-lum: 30%;
+	--accent1-color: hsl(
+		var(--accent1-hue),
+		var(--accent1-sat),
+		var(--accent1-lum));
+
+	/* hsl(190, 73%, 29%) */
+	--btn-primary-hue: var(--accent1-hue);
+	--btn-primary-sat: var(--accent1-sat);
+	--btn-primary-lum: var(--accent1-lum);
+	/* hsl(207, 0%, 29%) */
+	--btn-default-hue: 190;
+	--btn-default-sat: 0%;
+	--btn-default-lum: 35%;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+	height: 100%
+}
