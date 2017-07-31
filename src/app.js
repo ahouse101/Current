@@ -1,6 +1,23 @@
 var { app, BrowserWindow } = require('electron');
-
 var mainWindow; // Global mainWindow reference prevents garbage collection.
+
+app.on('ready', initialize);
+app.on('window-all-closed', () => {
+	if (process.platform !== 'darwin') app.quit();
+});
+app.on('activate', () => {
+	if (mainWindow === null) createMainWindow();
+});
+
+function initialize() {
+	createTrayIcon();
+	createMainWindow();
+}
+
+function createTrayIcon() {
+	
+}
+
 function createMainWindow() {
 	// Create the main window.
 	mainWindow = new BrowserWindow({
@@ -16,23 +33,3 @@ function createMainWindow() {
 		mainWindow = null; // Allows garbage collection.
 	});
 };
-
-// Open mainWindow when Electron is ready.
-app.on('ready', createMainWindow);
-
-// Quit when all windows are closed.
-app.on('window-all-closed', () => {
-	// On OS X it is common for applications and their menu bar
-	// to stay active until the user quits explicitly with Cmd + Q
-	if (process.platform !== 'darwin') {
-		app.quit();
-	}
-});
-
-app.on('activate', () => {
-	// On OS X it's common to re-create a window in the app when the
-	// dock icon is clicked and there are no other windows open.
-	if (mainWindow === null) {
-		createMainWindow();
-	}
-});
