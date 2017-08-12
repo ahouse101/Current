@@ -6,27 +6,27 @@
 </template>
 
 <script>
-module.exports = {
-	name: 'preloader',
-	props: {
-		message: {
-			type: String,
-			default: ''
+	module.exports = {
+		name: 'preloader',
+		props: {
+			message: {
+				type: String,
+				default: ''
+			}
+		},
+		data: () => {
+			return {};
+		},
+		computed: {
+			
+		},
+		methods: {
+			
+		},
+		created: function() {
+			
 		}
-	},
-	data: () => {
-		return {};
-	},
-	computed: {
-		
-	},
-	methods: {
-		
-	},
-	created: function() {
-		
 	}
-}
 </script>
 
 <style>
