@@ -1,2 +1,95 @@
-@import "_base.css"
+@import "_base.css";
 
+:root {
+	--menu-height: 46px;
+}
+
+#main-win {
+	height: 100%;
+}
+
+.app-heading {
+	height: var(--menu-height);
+	padding: 10px 20px;
+	background: hsl(0, 0%, 12%);
+	border-bottom: 1px solid black;
+	color: #EEE;
+	position: relative;
+}
+
+.sub-heading {
+	float: right;
+	font-size: 1rem;
+	position: relative;
+	top: 5px;
+}
+
+.app-body {
+	position: absolute;
+	top: calc(var(--menu-height));
+	bottom: 0;
+	width: 100%;
+}
+
+.split1 {
+	background: hsl(0, 0%, 14%);
+}
+
+.project-list {
+	position: relative;
+	overflow: auto;
+	height: 100%;
+}
+
+.project-list::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-right: 1px solid black;
+}
+
+.project-list::-webkit-scrollbar {
+	width: 10px;
+}
+
+.project-list::-webkit-scrollbar-track {
+	background: hsl(0, 0%, 12%);
+	border-right: 1px solid black;
+}
+
+.project-list::-webkit-scrollbar-thumb {
+	background: hsl(0, 0%, 24%);
+	border-right: 1px solid black;
+}
+
+.project-list-item {
+	position: relative;
+	background: hsl(0, 0%, 20%);
+	padding: 10px 20px;
+	border-bottom: 1px solid hsl(0, 0%, 10%);
+	border-right: 1px solid black;
+	cursor: pointer;
+	transition: 0.3s padding, 0.1s background;
+	-webkit-user-select: none;
+}
+
+.project-list-item:hover {
+	background: hsl(0, 0%, 24%);
+}
+
+.project-list-item:active {
+	background: hsl(0, 0%, 22%);
+}
+
+.project-list-item.selected {
+	background: var(--base-back-color);
+	border-left: 2px solid var(--base-fore-color);
+	border-right: 1px solid var(--base-back-color);
+}
+
+.project-list-item .project-title {
+	
+}

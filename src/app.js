@@ -20,13 +20,12 @@ function createTrayIcon() {
 
 function createMainWindow() {
 	mainWindow = new BrowserWindow({
-		width: 500,
-		height: 400,
-		minWidth: 400,
-		minHeight: 300,
+		width: 650,
+		height: 600,
+		minWidth: 500,
+		minHeight: 400,
 		backgroundColor: '#282828',
-		autoHideMenuBar: true,
-		darkTheme: true, // For some GTK+3 systems.
+		//frame: false
 	});
 	mainWindow.loadURL('file://' + __dirname + '/main-win.html');
 	if (isDevMode) installExtension(VUEJS_DEVTOOLS);

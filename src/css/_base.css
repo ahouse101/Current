@@ -7,14 +7,14 @@
 
 	--base-back-hue: 0;
 	--base-back-sat: 0%;
-	--base-back-lum: 15%;
+	--base-back-lum: 8%;
 	--base-back-color: hsl(
 		var(--base-back-hue),
 		var(--base-back-sat),
 		var(--base-back-lum));
 	--base-fore-hue: 0;
 	--base-fore-sat: 0%;
-	--base-fore-lum: 100%;
+	--base-fore-lum: 80%;
 	--base-fore-color: hsl(
 		var(--base-fore-hue),
 		var(--base-fore-sat),
@@ -41,12 +41,14 @@
 *,
 *::before,
 *::after {
-	box-sizing: inherit;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 html {
-	box-sizing: border-box;
 	height: 100%;
+	font-size: 12px;
 }
 
 body {
@@ -54,4 +56,33 @@ body {
 	background: var(--base-back-color);
 	color: var(--base-fore-color);
 	margin: 0;
+	font-family: var(--base-font);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+h1 {
+	font-size: 2.4rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h3 {
+	font-size: 1.8rem;
+}
+
+h4 {
+	font-size: 1.6rem;
+}
+
+h5 {
+	font-size: 1.4rem;
+}
+
+h6 {
+	font-size: 1.2rem;
 }

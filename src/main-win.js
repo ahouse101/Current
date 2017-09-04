@@ -7,7 +7,11 @@ const remote = require('electron').remote;
 document.addEventListener("DOMContentLoaded", initApp);
 
 function compileComponents() {
+	new vueCompiler({fileName: path.join(__dirname, '/components/Titlebar.vue'), enableCaching: true}).compile();
+	new vueCompiler({fileName: path.join(__dirname, '/components/SplitContainer.vue'), enableCaching: true}).compile();
 	new vueCompiler({fileName: path.join(__dirname, '/components/Preloader.vue'), enableCaching: true}).compile();
+	new vueCompiler({fileName: path.join(__dirname, '/components/ProjectListItem.vue'), enableCaching: true}).compile();
+	new vueCompiler({fileName: path.join(__dirname, '/components/ProjectDetails.vue'), enableCaching: true}).compile();
 	return WindowComponent = require((new vueCompiler({
 		fileName: path.join(__dirname, '/components/MainWin.vue'),
 		enableCaching: true
@@ -19,7 +23,7 @@ function initApp() {
 	global.eventBus = new Vue();
 	
 	// Add keyboard shortcuts.
-	//Mousetrap.bind(['esc', 'enter'], dispatchShortcut);
+	Mousetrap.bind(['/'], dispatchShortcut);
 	Mousetrap.bind('ctrl+r', refreshWindow);
 	Mousetrap.bind('f11', toggleFullscreen);
 	Mousetrap.bind('f12', openDevTools);
